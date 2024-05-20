@@ -7,19 +7,7 @@ import Scroll from '../components/Scroll';
 
 
 function App() {
-    // constructor() {
-    //     super()
-    //     this.state = {
-    //         robots: [],
-    //         searchfield: ''
-    //     }
-    // }
-
-    // componentDidMount(){
-    //     fetch('https://jsonplaceholder.typicode.com/users')
-    //     .then(response => {return response.json(); })
-    //     .then(users => {this.setState({robots: users}); })
-    // }
+   
     const [robots, setRobots] = useState([]); // Hook, "robots" is the state and "setRobots" is the function that changes said state. In the "useState" we place the inicial value of state
     const [searchfield, setSearchfield] = useState(""); // Hook, "robots" is the state and "setRobots" is the function that changes said state. In the "useState" we place the inicial value of state
 
@@ -27,7 +15,7 @@ function App() {
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => {return response.json(); })
         .then(users => {setRobots(users); })
-    },[])
+    },[]) //This "[]" makes it so the useEffect does not get run in an infinite loop, and makes it so it only runs once
     const onSearchChange = (event) => {
         setSearchfield(event.target.value);      
     }  
