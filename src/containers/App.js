@@ -30,7 +30,7 @@ function App() {
     return(
         <div className='tc'>
             <h1 className='f1'>RoboFriends</h1>
-            <SearchBox searchChange={onSearchChange}/>
+            <SearchBox searchChange={onInputChange}/>
             <Scroll>
                 <CardList robots={filteredRobots}/>
             </Scroll>
